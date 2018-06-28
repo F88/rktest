@@ -5,8 +5,7 @@ services:
 language: ruby
 
 before_install:
-    - sudo service mysqld stop
-    - sudo chkconfig mysqld off
+    - sudo /etc/init.d/mysql stop
     - docker-compose -v
 #    - docker-compose --file docker-compose.yml up --detach 
     - docker-compose up -d
