@@ -3,7 +3,7 @@ services:
   - docker
 addons:
   apt:
-    sources:
+win_power_planmysq    sources:
       - mysql-5.7-trusty
     packages:
       - mysql-client
@@ -14,8 +14,9 @@ before_install:
     - docker-compose -v
 #    - docker-compose --file docker-compose.yml up --build --detach 
     - docker-compose up -d
-    - mysql --host 127.0.0.1 --port  3306 -uroot -e 'status;'
-    - mysql --host 127.0.0.1 --port 53306 -uroot -e 'status;'
 
 script:
+    - mysql -V
+    - mysql --host 127.0.0.1 --port  3306 -uroot -e 'status;'
+    - mysql --host 127.0.0.1 --port 53306 -uroot -e 'status;'
     - ruby -v
