@@ -7,8 +7,10 @@ language: ruby
 before_install:
     - sudo /etc/init.d/mysql stop
     - docker-compose -v
-#    - docker-compose --file docker-compose.yml up --detach 
+#    - docker-compose --file docker-compose.yml up --build --detach 
     - docker-compose up -d
 
 script:
     - ruby -v
+    - mysql --host 127.0.0.1 --port  3306 -uroot -e 'status;'
+    - mysql --host 127.0.0.1 --port 53306 -uroot -e 'status;'
