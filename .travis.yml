@@ -11,9 +11,12 @@ language: ruby
 
 before_install:
     - sudo /etc/init.d/mysql stop
+    - mysql -V
     - docker-compose -v
+    - mysql -V
 #    - docker-compose --file docker-compose.yml up --build --detach 
     - docker-compose up -d
+    - mysql -V
 
 script:
     - mysql -V
