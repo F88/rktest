@@ -5,7 +5,9 @@ services:
 language: ruby
 
 before_install:
-    - docker-compose --file docker-compose.yml up --detach 
+    - docker-compose -v
+#    - docker-compose --file docker-compose.yml up --detach 
+    - docker-compose up -d
 
 script:
     - ruby -v
