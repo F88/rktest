@@ -3,11 +3,10 @@ services:
   - docker
 addons:
   apt:
-win_power_planmysq    sources:
+    sources:
       - mysql-5.7-trusty
     packages:
       - mysql-server
-      - mysql-client
 language: ruby
 
 before_install:
