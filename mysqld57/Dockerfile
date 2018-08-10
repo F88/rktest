@@ -1,8 +1,8 @@
-FROM mysql:5.7.22
+FROM mysql:5.7
 
 ENV PATH ${PATH}:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ENV MYSQL_ROOT_USER             root
-ENV MYSQL_ALLOW_EMPTY_PASSWORD  yes
+ENV MYSQL_ALLOW_EMPTY_PASSWORD  true
 # ENV MYSQL_ROOT_PASSWORD       lion
 ENV MYSQL_CHARSET               utf8
 #VOLUME ./init.d:/docker-entrypoint-initdb.d
