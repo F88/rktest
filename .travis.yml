@@ -2,19 +2,15 @@ sudo: required
 services:
   - docker
 addons:
-#  apt:
-#    sources:
-#      - mysql-5.7-trusty
-#    packages:
-#      - mysql-server
+apt:
+  packages:
+    - docker-ce
 language: ruby
 env:
   - DOCKER_COMPOSE_VERSION=1.22.0
 before_install:
-#    - sudo /etc/init.d/mysql stop
     - docker version
     - docker-compose version
-#    - docker-compose --file docker-compose.yml up --build --detach 
     - docker-compose up --detach --build
     - mysql --host 127.0.0.1 --port  3307 -uroot -e 'status;'
     - mysql --host 127.0.0.1 --port  3308 -uroot -e 'status;'
@@ -24,5 +20,6 @@ script:
 #    - which mysql
 #    - mysql -V
 #    - mysql --host 127.0.0.1 --port  3306 -uroot -e 'status;'
+#    - mysql --host 127.0.0.1 --port  3307 -uroot -e 'status;'
 #    - mysql --host 127.0.0.1 --port 53306 -uroot -e 'status;'
     - ruby -v
