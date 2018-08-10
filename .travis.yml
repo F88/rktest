@@ -15,12 +15,13 @@ before_install:
 #    - docker-compose --file docker-compose.yml up --build --detach 
     - docker-compose up -d
     - mysql -V
-    - mysql --host 127.0.0.1 --port  3306 -uroot -e 'status;'
+    - mysql --host 127.0.0.1 --port  3307 -uroot -e 'status;'
+    - mysql --host 127.0.0.1 --port  3308 -uroot -e 'status;'
     - mysql --host 127.0.0.1 --port 53306 -uroot -e 'status;'
 
 script:
-    - which mysql
-    - mysql -V
+#    - which mysql
+#    - mysql -V
 #    - mysql --host 127.0.0.1 --port  3306 -uroot -e 'status;'
 #    - mysql --host 127.0.0.1 --port 53306 -uroot -e 'status;'
     - ruby -v
