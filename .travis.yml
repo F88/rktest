@@ -2,12 +2,12 @@ sudo: required
 services:
   - docker
 addons:
-apt:
-  packages:
-    - docker-ce
+  apt:
+    packages:
+      - docker-ce
 language: ruby
-env:
-  - DOCKER_COMPOSE_VERSION=1.22.0
+# env:
+#   - DOCKER_COMPOSE_VERSION=1.22.0
 before_install:
     - docker version
     - docker-compose version
