@@ -8,7 +8,8 @@ addons:
 #    packages:
 #      - mysql-server
 language: ruby
-
+env:
+  - DOCKER_COMPOSE_VERSION=1.22.0
 before_install:
 #    - sudo /etc/init.d/mysql stop
     - docker version
