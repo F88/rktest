@@ -14,7 +14,13 @@ jobs:
 
       - checkout
 
-      - run: sudo apt-get -y install mysql-client
+      - run:
+          name: Install MySQL client
+          command: |
+            sudo apt-get update
+            # sudo apt-get install -y libzip-dev
+            # sudo apt-get install -y zlib1g-dev libicu-dev g++
+            sudo apt-get install -y mysql-client
       - run: mysql --version
 
       - setup_remote_docker:
