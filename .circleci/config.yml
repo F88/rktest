@@ -14,6 +14,9 @@ jobs:
 
       - checkout
 
+      - run: sudo apt-get -y install mysql-client
+      - run: mysql --version
+
       - setup_remote_docker:
           # version: 17.05.0-ce
           docker_layer_caching: true
