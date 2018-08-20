@@ -21,7 +21,7 @@ jobs:
             # sudo apt-get install -y libzip-dev
             # sudo apt-get install -y zlib1g-dev libicu-dev g++
             sudo apt-get install -y mysql-client
-      - run: mysql --version
+            mysql --version
 
       - setup_remote_docker:
           # version: 17.05.0-ce
@@ -44,8 +44,8 @@ jobs:
           command: |
             docker-compose up  --build --detach
 
-      - run: ruby -v
-      - run: mysql --host 127.0.0.1 --port  3307 -uroot -e 'status;'
-      - run: mysql --host 127.0.0.1 --port  3308 -uroot -e 'status;'
-      - run: mysql --host 127.0.0.1 --port 53306 -uroot -e 'status;'
+      # - run: ruby -v
+      # - run: mysql --host 127.0.0.1 --port  3307 -uroot -e 'status;'
+      # - run: mysql --host 127.0.0.1 --port  3308 -uroot -e 'status;'
+      # - run: mysql --host 127.0.0.1 --port 53306 -uroot -e 'status;'
 
