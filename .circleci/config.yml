@@ -35,4 +35,8 @@ jobs:
           command: |
             docker-compose up  --build --detach
 
+      - run: ruby -v
+      - run: mysql --host 127.0.0.1 --port  3307 -uroot -e 'status;'
+      - run: mysql --host 127.0.0.1 --port  3308 -uroot -e 'status;'
+      - run: mysql --host 127.0.0.1 --port 53306 -uroot -e 'status;'
 
