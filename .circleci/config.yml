@@ -30,7 +30,9 @@ jobs:
 
       - run: docker version
       - run: docker-compose version
-      - run: |
-          name: execute docker-compose
+      - run:
+          name: Eexecute docker-compose
           command: |
-            docker-compose up --detach --build
+            docker-compose up  --build --detach
+
+
